@@ -1,0 +1,38 @@
+﻿@model WebApplication2.Models.Vlasnik
+
+@{
+    ViewBag.Title = "login";
+}
+
+<h2>Login</h2>
+
+    @Html.AntiForgeryToken()
+    @if (ViewBag.message == null && ViewBag.triedOnce == "yes")
+    {
+        <h4>Korisnicko ime ili lozinka nisu ispravni. Prijavite se ponovno ili se Registrirajte.@Html.ActionLink("Registracija", "Register", "Vlasniks")</h4>
+    }
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Login">
+
+                    <div class="form-group">
+                        <label asp-for="korisnickoIme" class="control-label"></label>
+                        <input asp-for="korisnickoIme" class="form-control" />
+                        <span asp-validation-for="korisnickoIme" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="lozinka" class="control-label"></label>
+                        <input type="password" asp-for="lozinka" class="form-control" />
+                        <span asp-validation-for="lozinka" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </form>
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+
+            </div>
+            </div>
+

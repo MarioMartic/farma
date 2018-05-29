@@ -1,0 +1,11 @@
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp2.0\WebApplication2.deps.json
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp2.0\WebApplication2.runtimeconfig.json
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp2.0\WebApplication2.runtimeconfig.dev.json
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp2.0\WebApplication2.dll
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp2.0\WebApplication2.pdb
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.csprojAssemblyReference.cache
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.csproj.CoreCompileInputs.cache
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfoInputs.cache
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfo.cs
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.dll
+C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.pdb

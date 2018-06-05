@@ -49,6 +49,16 @@ namespace WebApplication2.Controllers
                 return NotFound();
             }
 
+            //dohvacanje vlasnika
+            var vlasnik = _context.Vlasnik;
+            foreach (Vlasnik v in vlasnik)
+            {
+                if (farma.VlasnikId == v.Id)
+                {
+                    ViewBag.owner = v.korisnickoIme;
+                }
+            }
+
             return View(farma);
         }
 
@@ -110,6 +120,7 @@ namespace WebApplication2.Controllers
             {
                 try
                 {
+                    farma.VlasnikId = (int)HttpContext.Session.GetInt32("user_id");
                     _context.Update(farma);
                     await _context.SaveChangesAsync();
                 }

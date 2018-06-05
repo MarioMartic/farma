@@ -4,7 +4,7 @@
     ViewData["Title"] = "MojeFarme";
 }
 
-<h2>MojeFarme</h2>
+<h2>Moje Farme</h2>
 
 <p>
     <a asp-action="Create" asp-controller="Farmas" asp-action="Create">Create New</a>
@@ -21,9 +21,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Lng)
                 </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Vlasnik)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -40,12 +37,9 @@
                 @Html.DisplayFor(modelItem => item.Lng)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Vlasnik.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-controller="Farmas" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-controller="Farmas" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-controller="Farmas" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-primary" asp-controller="Farmas" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-success" asp-controller="Farmas" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-controller="Farmas" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

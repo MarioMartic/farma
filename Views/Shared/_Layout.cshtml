@@ -34,6 +34,9 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Ravnicas" asp-action="Index">Ravnice</a></li>
+                    <li><a asp-area="" asp-controller="Farmas" asp-action="Index">Farme</a></li>
+                    <li><a asp-area="" asp-controller="Mehanizacijas" asp-action="Index">Mehanizacije</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Context.Session.GetString("username") != null)

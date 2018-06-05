@@ -52,6 +52,22 @@ namespace WebApplication2.Controllers
             return View();
         }
 
+        // POST: Vlasniks/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register([Bind("Id,Ime,korisnickoIme,lozinka,Prezime,Naziv,Udruga")] Vlasnik vlasnik)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(vlasnik);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(vlasnik);
+        }
+
         public ActionResult Login()
         {
             return View();
@@ -105,21 +121,24 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // POST: Vlasniks/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Ime,korisnickoIme,lozinka,Prezime,Naziv,Udruga")] Vlasnik vlasnik)
+        public ActionResult moji_mljekomati()
         {
-            if (ModelState.IsValid)
+            if (HttpContext.Session.GetString("username") != null)
             {
-                _context.Add(vlasnik);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var mljekomat = _context.Mlijekomat;
+                List<Mlijekomat> lista_mljek = new List<Mlijekomat>();
+                foreach (Mlijekomat ml in mljekomat)
+                {
+                    if (ml.VlasnikId.Equals((int)HttpContext.Session.GetInt32("user_id")))
+                    {
+                        lista_mljek.Add(ml);
+                    }
+                }
+                return View(lista_mljek.ToList());
             }
-            return View(vlasnik);
+            return RedirectToAction("Index", "Home");
         }
+
 
         // GET: Vlasniks/Edit/5
         public async Task<IActionResult> Edit(long? id)

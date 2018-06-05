@@ -1,0 +1,54 @@
+﻿@model WebApplication2.Models.Mlijekomat
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mlijekomat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lng)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lng)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LokalniNaziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LokalniNaziv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VelicinaSpremnika)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VelicinaSpremnika)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trosak)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trosak)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vlasnik)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vlasnik.korisnickoIme)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -37,6 +37,7 @@
                     <li><a asp-area="" asp-controller="Ravnicas" asp-action="Index">Ravnice</a></li>
                     <li><a asp-area="" asp-controller="Farmas" asp-action="Index">Farme</a></li>
                     <li><a asp-area="" asp-controller="Mehanizacijas" asp-action="Index">Mehanizacije</a></li>
+                    <li><a asp-area="" asp-controller="Mlijekomats" asp-action="Index">Mljekomat</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Context.Session.GetString("username") != null)
@@ -50,6 +51,7 @@
                                 <a class="dropdown-item">@Html.ActionLink("Moje Ravnice", "moje_ravnice", "Profile")</a>
                                 <a class="dropdown-item">@Html.ActionLink("Moje Farme", "Moje_farme", "Vlasniks")</a>
                                 <a class="dropdown-item">@Html.ActionLink("Moja Mehanizacija", "register", "Home")</a>
+                                <a class="dropdown-item">@Html.ActionLink("Moji Mljekomati", "moji_mljekomati", "Vlasniks")</a>
                                 <a class="dropdown-item">@Html.ActionLink("Odjava", "Logout", "Vlasniks")</a>
                             </div>
                         </li>

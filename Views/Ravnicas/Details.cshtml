@@ -1,0 +1,65 @@
+﻿@model WebApplication2.Models.Ravnica
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ravnica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LokalniNaziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LokalniNaziv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lng)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lng)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duzina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duzina)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sirina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sirina)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KategorizacijaZemlje)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KategorizacijaZemlje)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Zasadjena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Zasadjena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vlasnik)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vlasnik.korisnickoIme)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success"asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplication2.Models.Ravnica>
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LokalniNaziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lng)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duzina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sirina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategorizacijaZemlje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zasadjena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vlasnik)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LokalniNaziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lng)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duzina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sirina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategorizacijaZemlje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zasadjena)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vlasnik.Id)
+                </td>
+                <td>
+                    @if (@Context.Session.GetString("username") != null)
+                    {
+                        @if (item.VlasnikId == Context.Session.GetInt32("user_id"))
+                        {
+                            <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        }
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    }
+                </td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+@if (@Context.Session.GetString("username") != null)
+{
+    <p>
+        <a class="btn btn-success" asp-action="Create">Add New</a>
+    </p>
+}

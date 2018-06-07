@@ -10308,7 +10308,7 @@
       ]
     },
     "System.Linq.Parallel/4.3.0": {
-      "sha512": "h4bPXgBe8QTD3QDe05RRT2WLRqctJ6uRcQd8qu+8BQaTe3iaM8BV4rxOmAyQ54mrrBAuoD/sV+owVJJQNG+oIg==",
+      "sha512": "td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
       "type": "package",
       "path": "system.linq.parallel/4.3.0",
       "files": [
@@ -12117,7 +12117,7 @@
       ]
     },
     "System.Security.Cryptography.Xml/4.4.2": {
-      "sha512": "1m+fKVrApgKYMRuE0MF0vGjqy4XqAp1rCtyAzMXhJajMDDytMh/rHk9hp4M7KKk3QQZoWJUvyUY7xcw74w+JiQ==",
+      "sha512": "q9Dren/YP5jhRCkDvLfuaPpMTQzP97ANvzq/OoGgwK8YdLRSTABS9oW5/23OKoM2DRCuBrh4qaecD2YNhPtuzQ==",
       "type": "package",
       "path": "system.security.cryptography.xml/4.4.2",
       "files": [
@@ -13307,23 +13307,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {},
+    "C:\\Users\\mlinar\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\source\\repos\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "C:\\Users\\mlinar\\Desktop\\Visual Studio\\farma\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "C:\\Users\\Mario\\source\\repos\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
-      "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mario\\source\\repos\\WebApplication2\\WebApplication2\\obj\\",
+      "projectPath": "C:\\Users\\mlinar\\Desktop\\Visual Studio\\farma\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\mlinar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mlinar\\Desktop\\Visual Studio\\farma\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mlinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

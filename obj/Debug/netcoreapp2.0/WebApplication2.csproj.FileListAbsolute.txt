@@ -9,3 +9,14 @@ C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp
 C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfo.cs
 C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.dll
 C:\Users\Mario\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp2.0\WebApplication2.pdb
+C:\Users\mlinar\Desktop\Visual Studio\farma\bin\Debug\netcoreapp2.0\WebApplication2.deps.json
+C:\Users\mlinar\Desktop\Visual Studio\farma\bin\Debug\netcoreapp2.0\WebApplication2.runtimeconfig.json
+C:\Users\mlinar\Desktop\Visual Studio\farma\bin\Debug\netcoreapp2.0\WebApplication2.runtimeconfig.dev.json
+C:\Users\mlinar\Desktop\Visual Studio\farma\bin\Debug\netcoreapp2.0\WebApplication2.dll
+C:\Users\mlinar\Desktop\Visual Studio\farma\bin\Debug\netcoreapp2.0\WebApplication2.pdb
+C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.csprojAssemblyReference.cache
+C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.csproj.CoreCompileInputs.cache
+C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfoInputs.cache
+C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfo.cs
+C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.dll
+C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.pdb

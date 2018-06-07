@@ -26,42 +26,48 @@
             <th>
                 Longituda
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vlasnik)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LokalniNaziv)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Lat)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Lng)
-                </td>
-                <td>
-                    @if (@Context.Session.GetString("username") != null)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LokalniNaziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lng)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vlasnik.korisnickoIme)
+            </td>
+            <td>
+                @if (@Context.Session.GetString("username") != null)
+                {
+                    @if (item.VlasnikId == Context.Session.GetInt32("user_id"))
                     {
-                        @if (item.VlasnikId == Context.Session.GetInt32("user_id"))
-                        {
-                            <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                            <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        }
-                        else
-                        {
-                            <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        }
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     }
                     else
                     {
                         <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
                     }
-                </td>
-            </tr>
+                }
+                else
+                {
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                }
+            </td>
+        </tr>
         }
     </tbody>
 </table>

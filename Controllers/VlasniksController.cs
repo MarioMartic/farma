@@ -63,9 +63,9 @@ namespace WebApplication2.Controllers
             {
                 _context.Add(vlasnik);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Login));
             }
-            return View(vlasnik);
+            return View("Index","Home");
         }
 
         public ActionResult Login()
@@ -139,6 +139,24 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult Moje_ravnice()
+        {
+            if (HttpContext.Session.GetString("username") != null)
+            {
+                var ravnica = _context.Ravnica;
+                List<Ravnica> lista_rav = new List<Ravnica>();
+                foreach (Ravnica r in ravnica)
+                {
+                    if (r.VlasnikId.Equals((int)HttpContext.Session.GetInt32("user_id")))
+                    {
+                        lista_rav.Add(r);
+                    }
+                }
+                return View(lista_rav.ToList());
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
 
         // GET: Vlasniks/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -186,7 +204,8 @@ namespace WebApplication2.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                HttpContext.Session.SetString("username", vlasnik.korisnickoIme);
+                return RedirectToAction("Index", "Home");
             }
             return View(vlasnik);
         }
@@ -214,10 +233,32 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
+            //brisemo korisnika
             var vlasnik = await _context.Vlasnik.SingleOrDefaultAsync(m => m.Id == id);
             _context.Vlasnik.Remove(vlasnik);
+
+            //brisanje sve njegove farme
+            var farme = _context.Farma;
+            foreach (Farma f in farme)
+            {
+                if (f.VlasnikId==vlasnik.Id)
+                {
+                    _context.Farma.Remove(f);
+                }
+            }
+
+            //brisemo sve njegove ravnice
+            var ravnice = _context.Ravnica;
+            foreach (Ravnica r in ravnice)
+            {
+                if (r.VlasnikId == vlasnik.Id)
+                {
+                    _context.Ravnica.Remove(r);
+                }
+            }
+
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Login));
         }
 
         private bool VlasnikExists(long id)

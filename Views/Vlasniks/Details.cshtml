@@ -4,9 +4,13 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Moj profil</h2>
 
 <div>
+    @if(ViewBag.success!=null)
+    {
+        <h3>@ViewBag.success</h3>
+    }
     <h4>Vlasnik</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -49,6 +53,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-success"asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete account</a>
 </div>

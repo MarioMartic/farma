@@ -47,11 +47,16 @@
                                 @Context.Session.GetString("username")
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item">@Html.ActionLink("Moj Profil", "index", "Profile")</a>
-                                <a class="dropdown-item">@Html.ActionLink("Moje Ravnice", "moje_ravnice", "Profile")</a>
+                                <a class="dropdown-item" asp-controller="Vlasniks" asp-action="Details" asp-route-id="@Context.Session.GetInt32("user_id")">Moj profil</a>
+                                <br />
+                                <a class="dropdown-item">@Html.ActionLink("Moje Ravnice", "Moje_ravnice", "Vlasniks")</a>
+                                <br />
                                 <a class="dropdown-item">@Html.ActionLink("Moje Farme", "Moje_farme", "Vlasniks")</a>
+                                <br />
                                 <a class="dropdown-item">@Html.ActionLink("Moja Mehanizacija", "register", "Home")</a>
+                                <br />
                                 <a class="dropdown-item">@Html.ActionLink("Moji Mljekomati", "moji_mljekomati", "Vlasniks")</a>
+                                <br />
                                 <a class="dropdown-item">@Html.ActionLink("Odjava", "Logout", "Vlasniks")</a>
                             </div>
                         </li>

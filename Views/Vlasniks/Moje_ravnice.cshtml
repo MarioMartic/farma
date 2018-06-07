@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WebApplication2.Models.Ravnica>
+
+@{
+    ViewData["Title"] = "Moje_ravnice";
+}
+
+<h2>Moje ravnice</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LokalniNaziv)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lng)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duzina)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sirina)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KategorizacijaZemlje)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Zasadjena)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vlasnik)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LokalniNaziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lng)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duzina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sirina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategorizacijaZemlje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zasadjena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vlasnik.korisnickoIme)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Ravnicas" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-success" asp-controller="Ravnicas" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-controller="Ravnicas" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

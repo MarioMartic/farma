@@ -277,6 +277,25 @@ namespace WebApplication2.Controllers
                 }
             }
 
+            //brisanje sve njegove mljekomate
+            var mlijeko = _context.Mlijekomat;
+            foreach (Mlijekomat m in mlijeko)
+            {
+                if (m.VlasnikId == vlasnik.Id)
+                {
+                    _context.Mlijekomat.Remove(m);
+                }
+            }
+
+            var meha = _context.Mehanizacija;
+            foreach (Mehanizacija m in meha)
+            {
+                if (m.VlasnikId == vlasnik.Id)
+                {
+                    _context.Mehanizacija.Remove(m);
+                }
+            }
+
             //brisemo sve njegove ravnice
             var ravnice = _context.Ravnica;
             foreach (Ravnica r in ravnice)

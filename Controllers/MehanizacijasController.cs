@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -73,6 +74,7 @@ namespace WebApplication2.Controllers
         {
             if (ModelState.IsValid)
             {
+                mehanizacija.VlasnikId = (int)HttpContext.Session.GetInt32("user_id");
                 _context.Add(mehanizacija);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -116,6 +118,7 @@ namespace WebApplication2.Controllers
             {
                 try
                 {
+                    mehanizacija.VlasnikId = (int)HttpContext.Session.GetInt32("user_id");
                     _context.Update(mehanizacija);
                     await _context.SaveChangesAsync();
                 }

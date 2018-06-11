@@ -1,0 +1,54 @@
+﻿@model WebApplication2.Models.Radnja
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Radnja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trosak)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trosak)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dobit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dobit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PocetakRadnje)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PocetakRadnje)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KrajRadnje)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KrajRadnje)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ravnica)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ravnica.KategorizacijaZemlje)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

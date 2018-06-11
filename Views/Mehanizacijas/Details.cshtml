@@ -1,0 +1,48 @@
+﻿@model WebApplication2.Models.Mehanizacija
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mehanizacija</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NabavnaCijena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NabavnaCijena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumKupnje)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DatumKupnje)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TrenutnaVrijednost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TrenutnaVrijednost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategorija)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kategorija.Naziv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vlasnik)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vlasnik.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

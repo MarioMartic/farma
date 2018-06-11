@@ -107,8 +107,8 @@ namespace WebApplication2.Controllers
         {
             if (HttpContext.Session.GetString("username") != null)
             {
-                    var farme = _context.Farma;
-                    List<Farma> far = new List<Farma>();
+                    var farme = _context.Farma.Include(f => f.Vlasnik);
+                List<Farma> far = new List<Farma>();
                     foreach (Farma f in farme)
                     {
                         if (f.VlasnikId.Equals((int)HttpContext.Session.GetInt32("user_id")))
@@ -125,7 +125,7 @@ namespace WebApplication2.Controllers
         {
             if (HttpContext.Session.GetString("username") != null)
             {
-                var mljekomat = _context.Mlijekomat;
+                var mljekomat = _context.Mlijekomat.Include(m => m.Vlasnik);
                 List<Mlijekomat> lista_mljek = new List<Mlijekomat>();
                 foreach (Mlijekomat ml in mljekomat)
                 {
@@ -143,7 +143,7 @@ namespace WebApplication2.Controllers
         {
             if (HttpContext.Session.GetString("username") != null)
             {
-                var ravnica = _context.Ravnica;
+                var ravnica = _context.Ravnica.Include(r => r.Vlasnik);
                 List<Ravnica> lista_rav = new List<Ravnica>();
                 foreach (Ravnica r in ravnica)
                 {
@@ -153,6 +153,24 @@ namespace WebApplication2.Controllers
                     }
                 }
                 return View(lista_rav.ToList());
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult moje_mehanizacije()
+        {
+            if (HttpContext.Session.GetString("username") != null)
+            {
+                var mehanizacija = _context.Mehanizacija.Include(m => m.Kategorija).Include(m => m.Vlasnik);
+                List<Mehanizacija> lista_meh = new List<Mehanizacija>();
+                foreach (Mehanizacija meh in mehanizacija)
+                {
+                    if (meh.VlasnikId.Equals((int)HttpContext.Session.GetInt32("user_id")))
+                    {
+                        lista_meh.Add(meh);
+                    }
+                }
+                return View(lista_meh.ToList());
             }
             return RedirectToAction("Index", "Home");
         }

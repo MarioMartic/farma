@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication2.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Session;
+using PagedList;
 
 namespace WebApplication2.Controllers
 {

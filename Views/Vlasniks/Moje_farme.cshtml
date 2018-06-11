@@ -29,6 +29,7 @@
                 @Html.DisplayNameFor(model => model.Lng)
             </th>
             <th></th>
+            <th>Dodaj zivotinje</th>
         </tr>
     </thead>
     <tbody>
@@ -48,6 +49,9 @@
                     <a class="btn btn-primary" asp-controller="Farmas" asp-action="Details" asp-route-id="@item.Id">Details</a>
                     <a class="btn btn-success" asp-controller="Farmas" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                     <a class="btn btn-danger" asp-controller="Farmas" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+                <td>
+                    <a class="btn btn-default" asp-controller="SkupinaZivotinjas" asp-action="Create" asp-route-id="@item.Id">Dodaj Zivotinje</a>
                 </td>
             </tr>
         }

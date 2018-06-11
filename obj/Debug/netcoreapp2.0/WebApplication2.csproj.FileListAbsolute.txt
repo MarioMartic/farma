@@ -20,3 +20,14 @@ C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplicati
 C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfo.cs
 C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.dll
 C:\Users\mlinar\Desktop\Visual Studio\farma\obj\Debug\netcoreapp2.0\WebApplication2.pdb
+C:\Users\Administrator\Source\Repos\farma\bin\Debug\netcoreapp2.0\WebApplication2.deps.json
+C:\Users\Administrator\Source\Repos\farma\bin\Debug\netcoreapp2.0\WebApplication2.runtimeconfig.json
+C:\Users\Administrator\Source\Repos\farma\bin\Debug\netcoreapp2.0\WebApplication2.runtimeconfig.dev.json
+C:\Users\Administrator\Source\Repos\farma\bin\Debug\netcoreapp2.0\WebApplication2.dll
+C:\Users\Administrator\Source\Repos\farma\bin\Debug\netcoreapp2.0\WebApplication2.pdb
+C:\Users\Administrator\Source\Repos\farma\obj\Debug\netcoreapp2.0\WebApplication2.csprojAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\farma\obj\Debug\netcoreapp2.0\WebApplication2.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\farma\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfoInputs.cache
+C:\Users\Administrator\Source\Repos\farma\obj\Debug\netcoreapp2.0\WebApplication2.AssemblyInfo.cs
+C:\Users\Administrator\Source\Repos\farma\obj\Debug\netcoreapp2.0\WebApplication2.dll
+C:\Users\Administrator\Source\Repos\farma\obj\Debug\netcoreapp2.0\WebApplication2.pdb

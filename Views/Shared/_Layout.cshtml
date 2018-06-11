@@ -34,6 +34,7 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Pocetna</a></li>
                     <li><a asp-area="" asp-controller="Ravnicas" asp-action="Index">Ravnice</a></li>
+                    <li><a asp-area="" asp-controller="Radnjas" asp-action="Index">Radnje</a></li>
                     <li><a asp-area="" asp-controller="Farmas" asp-action="Index">Farme</a></li>
                     <li><a asp-area="" asp-controller="Mehanizacijas" asp-action="Index">Mehanizacije</a></li>
                     <li><a asp-area="" asp-controller="Mlijekomats" asp-action="Index">Mljekomat</a></li>
@@ -49,6 +50,8 @@
                                 <a class="dropdown-item" asp-controller="Vlasniks" asp-action="Details" asp-route-id="@Context.Session.GetInt32("user_id")">Moj profil</a>
                                 <br />
                                 <a class="dropdown-item">@Html.ActionLink("Moje Ravnice", "Moje_ravnice", "Vlasniks")</a>
+                                <br />
+                                <a class="dropdown-item">@Html.ActionLink("Moje radnje", "Moje_radnje", "Radnjas")</a>
                                 <br />
                                 <a class="dropdown-item">@Html.ActionLink("Moje Farme", "Moje_farme", "Vlasniks")</a>
                                 <br />

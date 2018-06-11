@@ -1,0 +1,97 @@
+﻿@model IEnumerable<WebApplication2.Models.Radnja>
+
+    @{
+    ViewData["Title"] = "Moje_radnje";
+    }
+
+    <h2>Moje_radnje</h2>
+
+    <form class="form-inline my-2 my-lg-0">
+        <br />
+        <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" type="search" placeholder="Pretraga po nazivu" aria-label="Search">
+        <br />
+        <br />
+    </form>
+
+
+    <table class="table" id="myTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Naziv", "Moje_radnje", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Trosak)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dobit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PocetakRadnje)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KrajRadnje)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ravnica)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Trosak)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dobit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PocetakRadnje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KrajRadnje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ravnica.LokalniNaziv)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Radnjas" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-primary" asp-controller="Radnjas" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="btn btn-primary" asp-controller="Radnjas" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        <a class="btn btn-primary" asp-controller="Radnjas" asp-action="Create">Create New</a>
+    </p>
+
+
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>

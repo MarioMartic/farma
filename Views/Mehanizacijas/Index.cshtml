@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.TrenutnaVrijednost)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Kategorija)
+                @Html.ActionLink("Kategorije", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Vlasnik)

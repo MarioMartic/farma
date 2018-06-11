@@ -27,10 +27,21 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Farmas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var pI_06Context = _context.Farma.Include(f => f.Vlasnik);
-            return View(await pI_06Context.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var farmas = from f in _context.Farma.Include(f => f.Vlasnik)
+                         select f;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    farmas = farmas.OrderByDescending(f => f.LokalniNaziv);
+                    break;
+                default:
+                    farmas = farmas.OrderBy(f => f.LokalniNaziv);
+                    break;
+            }
+            return View(farmas.ToList());
         }
 
         // GET: Farmas/Details/5

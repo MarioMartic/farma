@@ -16,7 +16,7 @@
                     @Html.DisplayNameFor(model => model.Ime)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.korisnickoIme)
+                    @Html.ActionLink("Korisnicko ime", "Index", new { sortOrder = ViewBag.NameSortParm })
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.lozinka)
@@ -35,6 +35,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    @if (item.korisnickoIme != null)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Ime)
@@ -60,6 +62,7 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
+    }
     </tbody>
 </table>

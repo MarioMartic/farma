@@ -23,9 +23,21 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Vlasniks
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Vlasnik.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var vlasnik = from v in _context.Vlasnik
+                          select v;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    vlasnik = vlasnik.OrderByDescending(v => v.korisnickoIme);
+                    break;
+                default:
+                    vlasnik = vlasnik.OrderBy(v => v.korisnickoIme);
+                    break;
+            }
+            return View(vlasnik.ToList());
         }
 
         // GET: Vlasniks/Details/5

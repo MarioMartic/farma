@@ -26,10 +26,21 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Ravnicas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var pI_06Context = _context.Ravnica.Include(r => r.Vlasnik);
-            return View(await pI_06Context.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var ravnica = from r in _context.Ravnica.Include(r => r.Vlasnik)
+                          select r;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    ravnica = ravnica.OrderByDescending(r => r.LokalniNaziv);
+                    break;
+                default:
+                    ravnica = ravnica.OrderBy(r => r.LokalniNaziv);
+                    break;
+            }
+            return View(ravnica.ToList());
         }
 
         // GET: Ravnicas/Details/5

@@ -21,10 +21,21 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Mlijekomats
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var pI_06Context = _context.Mlijekomat.Include(m => m.Vlasnik);
-            return View(await pI_06Context.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var mljekomat = from f in _context.Mlijekomat.Include(f => f.Vlasnik)
+                            select f;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    mljekomat = mljekomat.OrderByDescending(f => f.LokalniNaziv);
+                    break;
+                default:
+                    mljekomat = mljekomat.OrderBy(f => f.LokalniNaziv);
+                    break;
+            }
+            return View(mljekomat.ToList());
         }
 
         // GET: Mlijekomats/Details/5

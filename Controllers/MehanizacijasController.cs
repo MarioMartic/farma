@@ -19,10 +19,21 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Mehanizacijas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var pI_06Context = _context.Mehanizacija.Include(m => m.Kategorija).Include(m => m.Vlasnik);
-            return View(await pI_06Context.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var meha = from f in _context.Mehanizacija.Include(f => f.Vlasnik).Include(f => f.Kategorija)
+                       select f;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    meha = meha.OrderByDescending(f => f.Kategorija.Naziv);
+                    break;
+                default:
+                    meha = meha.OrderBy(f => f.Kategorija.Naziv);
+                    break;
+            }
+            return View(meha.ToList());
         }
 
         // GET: Mehanizacijas/Details/5

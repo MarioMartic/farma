@@ -13459,23 +13459,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Matej\\.nuget\\packages\\": {},
+    "C:\\Users\\mlinar\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matej\\Desktop\\New folder (3)\\farma\\WebApplication2.csproj",
+      "projectUniqueName": "C:\\Users\\mlinar\\Desktop\\Visual Studio\\farma\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "C:\\Users\\Matej\\Desktop\\New folder (3)\\farma\\WebApplication2.csproj",
-      "packagesPath": "C:\\Users\\Matej\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matej\\Desktop\\New folder (3)\\farma\\obj\\",
+      "projectPath": "C:\\Users\\mlinar\\Desktop\\Visual Studio\\farma\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\mlinar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mlinar\\Desktop\\Visual Studio\\farma\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Matej\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mlinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
